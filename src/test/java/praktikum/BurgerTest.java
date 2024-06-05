@@ -59,7 +59,8 @@ public class BurgerTest {
         burger.addIngredient(new Ingredient(FILLING, "Мясо бессмертных моллюсков Protostomia", 1337));
         burger.addIngredient(new Ingredient(SAUCE, "Соус Spicy-X", 90));
         float actual = burger.getPrice();
-        assertEquals(3403, actual, 0);
+        float delta = 0;
+        assertEquals(3403, actual, delta);
     }
 
     @Test

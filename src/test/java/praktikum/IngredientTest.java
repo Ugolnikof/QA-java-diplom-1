@@ -33,7 +33,8 @@ public class IngredientTest {
     @Test
     public void getPrice() {
         float actual = ingredient.getPrice();
-        assertEquals(price, actual, 0);
+        float delta = 0;
+        assertEquals(price, actual, delta);
     }
 
     @Test

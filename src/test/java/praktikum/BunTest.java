@@ -21,6 +21,7 @@ public class BunTest {
     @Test
     public void getPrice() {
         float actual = bun.getPrice();
-        assertEquals(988, actual, 0);
+        float delta = 0;
+        assertEquals(988, actual, delta);
     }
 }
