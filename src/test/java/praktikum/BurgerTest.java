@@ -3,11 +3,10 @@ package praktikum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static praktikum.IngredientType.FILLING;
 import static praktikum.IngredientType.SAUCE;
 
@@ -28,13 +27,13 @@ public class BurgerTest {
     @Test
     public void setBuns() {
         burger.setBuns(bun);
-        Mockito.verify(burger).setBuns(bun);
+        assertEquals(bun, burger.getBun());
     }
 
     @Test
     public void addIngredient() {
         burger.addIngredient(ingredient);
-        Mockito.verify(burger).addIngredient(ingredient);
+        assertEquals(ingredient, burger.getIngredients().get(0));
     }
 
     @Test
@@ -42,15 +41,16 @@ public class BurgerTest {
         burger.addIngredient(ingredient);
         burger.addIngredient(ingredient);
         burger.removeIngredient(1);
-        Mockito.verify(burger).removeIngredient(1);
+        assertEquals(1, burger.getIngredients().size());
     }
 
     @Test
     public void moveIngredient() {
-        burger.addIngredient(ingredient);
-        burger.addIngredient(ingredient);
+        burger.addIngredient(new Ingredient(FILLING, "Мясо бессмертных моллюсков Protostomia", 1337));
+        burger.addIngredient(new Ingredient(SAUCE, "Соус Spicy-X", 90));
         burger.moveIngredient(0,1);
-        Mockito.verify(burger).moveIngredient(0, 1);
+        assertEquals( "Соус Spicy-X", burger.getIngredients().get(0).name);
+        assertEquals( "Мясо бессмертных моллюсков Protostomia", burger.getIngredients().get(1).name);
     }
 
     @Test

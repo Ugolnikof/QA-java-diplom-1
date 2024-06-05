@@ -12,7 +12,17 @@ import java.util.List;
 public class Burger {
 
     public Bun bun;
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
     public List<Ingredient> ingredients = new ArrayList<>();
+
+
+    public Bun getBun() {
+        return bun;
+    }
 
     public void setBuns(Bun bun) {
         this.bun = bun;
