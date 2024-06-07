@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import static config.EnvConfig.DELTA;
 import static org.junit.Assert.*;
 import static praktikum.IngredientType.FILLING;
 import static praktikum.IngredientType.SAUCE;
@@ -33,8 +34,7 @@ public class IngredientTest {
     @Test
     public void getPrice() {
         float actual = ingredient.getPrice();
-        float delta = 0;
-        assertEquals(price, actual, delta);
+        assertEquals(price, actual, DELTA);
     }
 
     @Test

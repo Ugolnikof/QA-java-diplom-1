@@ -3,6 +3,7 @@ package praktikum;
 import org.junit.Before;
 import org.junit.Test;
 
+import static config.EnvConfig.DELTA;
 import static org.junit.Assert.*;
 public class BunTest {
     private Bun bun;
@@ -21,7 +22,6 @@ public class BunTest {
     @Test
     public void getPrice() {
         float actual = bun.getPrice();
-        float delta = 0;
-        assertEquals(988, actual, delta);
+        assertEquals(988, actual, DELTA);
     }
 }
